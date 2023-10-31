@@ -108,5 +108,22 @@ def scrap_details(df):
     df.loc[df["diffords_url"] != 'Unknown', "diff_glass"] = l_serve
     df.loc[df["diffords_url"] != 'Unknown', "diff_garnish"] = l_garnish
     df.loc[df["diffords_url"] != 'Unknown', "diff_nutrition"] = l_nutrition
-    
+
     return df
+
+def ingredients_dict(df):
+    for i in df.index:
+        try:
+            elements = df["ingredients"][i].split(',')
+            dict_ingr = {}
+            for element in elements:
+                if 'ml' in element:
+                    quantity, ingredient = [i.strip() for i in element.split(' ml')]
+                if 'pcs' in element:
+                    quantity, ingredient = [i.strip() for i in element.split(' pc')]
+                
+                dict_ingr[ingredient] = quantity
+                df["ingredients"][i] = dict_ingr
+                return "Done!"
+        except:
+            print("Error: Dicts were already created.")
