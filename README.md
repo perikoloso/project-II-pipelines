@@ -38,3 +38,6 @@ Cleaning source dataset comming from Kraggle
 
 3. About how to serve cocktails, type of glass is specified: Coupe Glass and Old-Fashioned glass are most usual ones.
 
+## Presentation
+
+[Link to Cocktails presentation](cocktails_pere.pptx)
