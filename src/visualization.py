@@ -14,6 +14,7 @@ def chart_types(df):
     plt.xlabel("Categories")
     plt.title("Cocktails by category")
     plt.ylabel('Num of Cocktails')
+    plt.savefig('../images/chart1.png', dpi=100)
     plt.show()
 
     # Return the Seaborn plot (optional)
